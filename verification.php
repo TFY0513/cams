@@ -53,7 +53,7 @@
 <br/>
                
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Confirm</button>
-                <a href="" >Login</a> <a href="" style="margin-left:180px">Register</a>
+                <a href="login.php" >Login</a> <a href="register.php" style="margin-left:180px">Register</a>
                 <p class="mt-5 mb-3 text-muted">&copy; 2022 CAMS</p>
             </form>
         </main>

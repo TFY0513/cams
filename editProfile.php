@@ -38,37 +38,96 @@
     <body>
         <?php include 'navbar.php'; ?>
         <?php include 'sidebar.php'; ?>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">User Profile</h1>
-                
-        </main> 
-        <div class="container py-3">
-            <div style="margin-left:100px;" class="row align-items-md-stretch">
-                <div class="col-md-6">
-                    <div class="h-75 p-5 text-white bg-dark rounded-3">
-                        <h2 class="text-center">Profile Image</h2>
-                        <h2 style="margin-top:100px;" class="text-center">Username</h2>
-                        <h5  style="margin-top:30px;" class="text-center">Position</h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="card" style="width:50%;">
+                    <div class="card-body" >
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
 
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2>Firstname Lastname</h2>
-                        <hr class="divider">    <br/>
-                       
-                        <h2>Age</h2>
-                          <hr class="divider">   <br/>  
-                        <h2>Contact Number</h2>
-                          <hr class="divider">   <br/>  
-                        <h2>Email</h2>
-                          <hr class="divider">  <br/>   
-                        <button style="margin-top:100px;    " class="btn btn-outline-secondary" type="button">Edit        Profile</button>
+
+                                <div style="padding-left:20px; padding-right:20px;" class="col-12">
+                                    <h4 class="mb-3">Username</h4>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" id="username" placeholder="" required>
+                                        <div class="invalid-feedback">
+                                            Your username is required.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-6">
+                                    <h4 class="mb-3">Firstname</h4>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-6">
+                                    <h4 class="mb-3">Lastname</h4>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-2">
+                                    <h4 class="mb-3">Age</h4>
+                                    <input type="text" class="form-control" id="" placeholder="" value="" required>
+                                    <div class="invalid-feedback">
+                                        Valid age is required.
+                                    </div>
+                                </div>
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-10">
+                                    <h4 class="mb-3">Position</h4>
+                                    <select class="form-select"  required>
+                                        <option value="volvo">Project Member    </option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+
+                                    <div class="invalid-feedback">
+                                        Valid position is required.
+                                    </div>
+                                </div>
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
+                                    <h4 class="mb-3">Contact Number</h4>
+                                    <input type="text" class="form-control" id="address" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                        Please enter your contact number
+                                    </div>
+                                </div>
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
+                                    <h4 class="mb-3">Email</h4>
+                                    <input type="email" class="form-control" id="email" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
+                                    <h4 class="mb-3">Profile Image</h4>
+                                    <input type="file" class="form-control" id="email" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                        Please upload a profile image
+                                    </div>
+                                </div>
+
+                            </div><br/>  
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Update Profile</button> </center>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </main> 
         <script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>

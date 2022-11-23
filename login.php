@@ -57,7 +57,7 @@
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
-                         <a href="recoverPassword.php" style="margin-left:30px">Forget Password?</a>
+                         <a href="recoverPassword.php   " style="margin-left:30px">Forget Password?</a>
                     </label>
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
