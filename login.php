@@ -40,7 +40,7 @@
 
         <main class="form-signin">
               
-            <form>
+            <form  action="index.php    ">
               
                 <img class="mb-4" src="component/logo/logo-transparent.png" alt="" width="300">
                 <h1 class="h3 mb-3 fw-normal">Login / Sign Up</h1>
@@ -57,11 +57,11 @@
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
-                         <a href=""style="margin-left:30px">Forget Password?</a>
+                         <a href="recoverPassword.php" style="margin-left:30px">Forget Password?</a>
                     </label>
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-                 <a href="" >Register an Account</a>
+                 <a href="register.php" >Register an Account</a>
                 <p class="mt-5 mb-3 text-muted">&copy; 2022 CAMS</p>
             </form>
         </main>

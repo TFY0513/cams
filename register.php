@@ -129,7 +129,7 @@
                                 </div>
 
                             </div><br/>  
-                            <a href="">Login</a>  
+                            <a href="login.php">Login</a>  
                             <hr class="my-4">
 
                             <button class="w-100 btn btn-primary btn-lg" type="submit">Register</button>
