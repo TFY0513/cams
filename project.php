@@ -46,7 +46,7 @@
             <div class="col d-flex justify-content-center">
                 <div class="card" style="width:100%; height: 700px;">
                     <div class="card-body" >
-                        <a href="" class="btn btn-outline-secondary">Create New Project</a><br/><br/>
+                        <a href="addProject.php" class="btn btn-outline-secondary">Create New Project</a><br/><br/>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -55,15 +55,17 @@
                                     <th scope="col">View</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
+                                    <th scope="col">Add Project Task</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td scope="row">1</td>
                                      <td scope="col">Project name</td>
-                                     <td scope="col"><a href="">View</a></td>
-                                    <td scope="col"><a href="">Edit</a></td>
+                                     <td scope="col"><a href="viewProject.php">View</a></td>
+                                    <td scope="col"><a href="editProject.php">Edit</a></td>
                                     <td scope="col"><a href="">Delete</a></td>
+                                       <td scope="col"><a href="addProjectTask.php">Add Project Task</a></td>
                                 </tr>
 
                             </tbody>

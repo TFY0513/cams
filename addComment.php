@@ -42,32 +42,30 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Project Management</h1>
             </div>
-              <h4 class="h4">Working Calendar</h4>
+            <h4 class="h4">Add Comment</h4>
             <div class="col d-flex justify-content-center">
                 <div class="card" style="width:100%; height: 700px;">
                     <div class="card-body" >
-                        <a href="addCalendar.php" class="btn btn-outline-secondary">Create New Calendar</a><br/><br/>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Calendar name</th>
-                                    <th scope="col">View</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="row">1</td>
-                                    <td scope="col">Calendar name</<td>cell</td>
-                                        <td scope="col"><a href="viewWorkingCalendar.php">View</a></td>
-                                    <td scope="col"><a href="editCalendar.php">Edit</a></td>
-                                    <td scope="col"><a href="">Delete</a></td>
-                                </tr>
 
-                            </tbody>
-                        </table>  
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+
+
+                                <div style="padding-left:20px; padding-right:20px;" class="col-12">
+                                    <h4 class="mb-3">Comment</h4>
+                                    <div class="input-group has-validation">
+                                        <textarea class="form-control"  id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                                        
+                                        <div class="invalid-feedback">
+                                            Project name is required.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div><br/>  
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Comment</button> </center>
+                        </form> 
                     </div>
                 </div>
             </div>

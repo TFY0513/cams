@@ -58,7 +58,12 @@
                                         Project
                                     </a>
                                 </li>
-
+                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="projectTask.php">
+                                        <span data-feather="file"></span>
+                                        Project Task
+                                    </a>
+                                </li>
                                 <li style="margin-left:10px;" class="nav-item">
                                     <a class="nav-link" href="workingCalendar.php">
                                         <span data-feather="file"></span>
@@ -96,16 +101,16 @@
                                         <span data-feather="file"></span>
                                         Profile
                                     </a>
-                                      <a class="nav-link" href="changePassword.php">
+                                    <a class="nav-link" href="changePassword.php">
                                         <span data-feather="file"></span>
                                         Change Password
                                     </a>
                                 </li>
-                                    
+
                             </div>
                         </ul>
 
-                       
+
                     </div>
                 </nav>
             </div>

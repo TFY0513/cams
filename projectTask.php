@@ -42,17 +42,21 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Project Management</h1>
             </div>
-              <h4 class="h4">Working Calendar</h4>
+            <h4 class="h4">Project Task</h4>
             <div class="col d-flex justify-content-center">
                 <div class="card" style="width:100%; height: 700px;">
                     <div class="card-body" >
-                        <a href="addCalendar.php" class="btn btn-outline-secondary">Create New Calendar</a><br/><br/>
+                      
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Calendar name</th>
-                                    <th scope="col">View</th>
+                                    <th scope="col">Project Task Name</th>
+                                    <th scope="col">Starting Date</th>
+                                    <th scope="col">Ending Date</th>
+                                    <th scope="col">Budget</th>
+                                    <th scope="col">Project Member</th>
+                                    <th scope="col">Project Manager</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -60,10 +64,16 @@
                             <tbody>
                                 <tr>
                                     <td scope="row">1</td>
-                                    <td scope="col">Calendar name</<td>cell</td>
-                                        <td scope="col"><a href="viewWorkingCalendar.php">View</a></td>
-                                    <td scope="col"><a href="editCalendar.php">Edit</a></td>
+                                    <td scope="col">Project</td>
+                                    <td scope="col">Starting Date</td>
+                                    <td scope="col">Ending Date</td>
+                                    <td scope="col">Budget</td>
+                                    <td scope="col">Project Member</td>
+                                    <td scope="col">Project Manager</td>
+                                   
+                                    <td scope="col"><a href="editProjectTask.php">Edit</a></td>
                                     <td scope="col"><a href="">Delete</a></td>
+                                   
                                 </tr>
 
                             </tbody>
