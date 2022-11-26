@@ -6,7 +6,6 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.84.0">
-        <title>Dashboard Template · Bootstrap v5.0</title>
 
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -82,11 +81,47 @@
                             <h5 class="nav-link">Document Approval</h5>
                             <div>
                                 <li style="margin-left:10px;" class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="documents.php">
                                         <span data-feather="file"></span>
-                                        XXXX
+                                        Documents
                                     </a>
                                 </li>
+                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="documentReviewMain.php">
+                                        <span data-feather="file"></span>
+                                        Review and Approval
+                                    </a>
+                                </li>
+<!--                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Editor
+                                    </a>
+                                </li>-->
+                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Reports
+                                    </a>
+                                </li>
+<!--                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Manage approval groups
+                                    </a>
+                                </li>
+                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Notification Template Settings
+                                    </a>
+                                </li>
+                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Document Template
+                                    </a>
+                                </li>-->
                             </div>
                             <hr>
                             <h5 class="nav-link">Settings</h5>
@@ -97,7 +132,12 @@
                                         Profile
                                     </a>
                                 </li>
-                                    
+                                <li style="margin-left:10px;" class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file"></span>
+                                        Notification
+                                    </a>
+                                </li>
                             </div>
                         </ul>
 
