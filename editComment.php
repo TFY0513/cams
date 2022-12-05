@@ -40,42 +40,36 @@
         <?php include 'sidebar.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Settings</h1>
+                <h1 class="h2">Project Management</h1>
             </div>
-            <h4 class="h4">Profile </h4>
+            <h4 class="h4">Edit Comment</h4>
+            <div class="col d-flex justify-content-center">
+                <div class="card" style="width:100%; height: 700px;">
+                    <div class="card-body" >
+
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+
+
+                                <div style="padding-left:20px; padding-right:20px;" class="col-12">
+                                    <h4 class="mb-3">Comment</h4>
+                                    <div class="input-group has-validation">
+                                        <textarea class="form-control"  id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                                        
+                                        <div class="invalid-feedback">
+                                            Project name is required.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div><br/>  
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Comment</button> </center>
+                        </form> 
+                    </div>
+                </div>
+            </div>
         </main> 
-
-        <div class="container py-3">
-
-            <div style="margin-left:100px;" class="row align-items-md-stretch">
-
-                <div class="col-md-6">
-                    <div class="h-75 p-5 text-white bg-dark rounded-3">
-                        <h2 class="text-center">Profile Image</h2>
-                        <h2 style="margin-top:100px;" class="text-center">Username</h2>
-                        <h5  style="margin-top:30px;" class="text-center">Position</h5>
-
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2>Firstname Lastname</h2>
-                        <hr class="divider">    <br/>
-
-                        <h2>Age</h2>
-                        <hr class="divider">   <br/>  
-                        <h2>Contact Number</h2>
-                        <hr class="divider">   <br/>  
-                        <h2>Email</h2>
-                        <hr class="divider">  <br/>   
-                        <a style="margin-top:100px;" href="editProfile.php" class="btn btn-outline-secondary" >Edit Profile</a>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
         <script src="bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>

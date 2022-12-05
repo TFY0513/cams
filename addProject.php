@@ -38,92 +38,97 @@
     <body>
         <?php include 'navbar.php'; ?>
         <?php include 'sidebar.php'; ?>
-       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">User Profile</h1>
+                <h1 class="h2">Project Management</h1>
             </div>
+            <h4 class="h4">Add Project</h4>
             <div class="col d-flex justify-content-center">
-                <div class="card" style="width:50%;">
+
+                <div class="card" style="width:100%; height: 700px;">
                     <div class="card-body" >
                         <form class="needs-validation" novalidate>
                             <div class="row g-3">
 
 
                                 <div style="padding-left:20px; padding-right:20px;" class="col-12">
-                                    <h4 class="mb-3">Username</h4>
+                                    <h4 class="mb-3">Project Name</h4>
                                     <div class="input-group has-validation">
-                                        <span class="input-group-text">@</span>
+
                                         <input type="text" class="form-control" id="username" placeholder="" required>
                                         <div class="invalid-feedback">
-                                            Your username is required.
+                                            Project name is required.
                                         </div>
                                     </div>
                                 </div>
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-6">
-                                    <h4 class="mb-3">Firstname</h4>
-                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid first name is required.
-                                    </div>
-                                </div>
-
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-6">
-                                    <h4 class="mb-3">Lastname</h4>
-                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
+                                    <h4 class="mb-3">Project Category</h4>
+                                    <select class="form-select"  required>
+                                        <option value="volvo">Upgrading</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
                                 </div>
 
 
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-2">
-                                    <h4 class="mb-3">Age</h4>
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
+                                    <h4 class="mb-3">Description</h4>
                                     <input type="text" class="form-control" id="" placeholder="" value="" required>
                                     <div class="invalid-feedback">
                                         Valid age is required.
                                     </div>
                                 </div>
 
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-sm-10">
-                                    <h4 class="mb-3">Position</h4>
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
+                                    <h4 class="mb-3">Priority</h4>
                                     <select class="form-select"  required>
-                                        <option value="volvo">Project Member    </option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
+                                        <option value="volvo">Low</option>
+                                        <option value="saab">Medium</option>
+                                        <option value="mercedes">High</option>
+
                                     </select>
-
-                                    <div class="invalid-feedback">
-                                        Valid position is required.
-                                    </div>
-                                </div>
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Contact Number</h4>
-                                    <input type="text" class="form-control" id="address" placeholder="" required>
-                                    <div class="invalid-feedback">
-                                        Please enter your contact number
-                                    </div>
                                 </div>
 
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Email</h4>
-                                    <input type="email" class="form-control" id="email" placeholder="" required>
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-6">
+                                    <h4 class="mb-3">Start Date</h4>
+                                    <input type="date" class="form-control" id="email" placeholder="" required>
                                     <div class="invalid-feedback">
                                         Please enter a valid email address
                                     </div>
                                 </div>
-
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Profile Image</h4>
-                                    <input type="file" class="form-control" id="email" placeholder="" required>
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-6">
+                                    <h4 class="mb-3">End Date</h4>
+                                    <input type="Date" class="form-control" id="email" placeholder="" required>
                                     <div class="invalid-feedback">
-                                        Please upload a profile image
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-6">
+                                    <h4 class="mb-3">Working Calendar</h4>
+                                    <select class="form-select"  required>
+                                        <option value="volvo">Calendar 1</option>
+
+
+                                    </select>
+                                </div>
+
+
+
+                                <div  style="padding-left:20px; padding-right:20px;"  class="col-6">
+                                    <h4 class="mb-3">Budget</h4>
+                                    <input type="input" class="form-control" id="email" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                        Valid age is required.
                                     </div>
                                 </div>
 
                             </div><br/>  
-                            <center><button  class=" btn btn-primary btn-lg" type="submit">Update Profile</button> </center>
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Add Project</button> </center>
                         </form>
+
                     </div>
                 </div>
             </div>

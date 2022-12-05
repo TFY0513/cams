@@ -36,23 +36,111 @@
                 }
             }
 
-            .status{
-                height: 25px;
-                width: 25px;
-                background-color: yellow;
-                border-radius: 50%;
-                display: inline-block;
+            .file_manager .file a:hover .hover,
+            .file_manager .file .file-name small{
+                display: block
+            }
+            .file_manager .file {
+                padding: 0 !important
+            }
+
+            .file_manager .file .icon{
+                text-align: center
+            }
+
+
+            .file_manager .file {
+                position: relative;
+                border-radius: .55rem;
+                overflow: hidden
+            }
+
+            .file_manager .file .image,
+            .file_manager .file .icon {
+                max-height: 180px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: top
+            }
+
+            .file_manager .file .hover {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                display: none;
+                transition: all 0.2s ease-in-out
+            }
+
+            .file_manager .file a:hover .hover {
+                transition: all 0.2s ease-in-out
+            }
+
+            .file_manager .file .icon {
+                padding: 15px 10px;
+                display: table;
+                width: 100%
+            }
+
+            .file_manager .file .icon i {
+                display: table-cell;
+                font-size: 30px;
+                vertical-align: middle;
+                color: #777;
+                line-height: 100px
+            }
+
+            .file_manager .file .file-name {
+                padding: 10px;
+                border-top: 1px solid #f7f7f7
+            }
+
+            .file_manager .file .file-name small .date {
+                float: right
+            }
+
+            .folder {
+                padding: 20px;
+                display: block;
+                color: #777
+            }
+
+            .card {
+                background: #fff;
+                transition: .5s;
+                border: 0;
+                margin-bottom: 30px;
+                border-radius: .55rem;
+                position: relative;
+                width: 100%;
+                box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+            }
+
+            a:hover {
+                text-decoration:none;
             }
         </style>
 
         <script>
             $(document).ready(function () {
                 $('#table_document').DataTable();
-
             });
             $(document).bind('DOMSubtreeModified', function () {
                 $(".pagination").children('li').addClass("page-item");
                 $(".pagination").children('li').children("a").addClass("page-link");
+            });
+            $(window).resize(function () {
+                if ($(".datatable-document").width() > $(".card-document").width()) {
+                    $(".datatable-document").css("overflow-x", "scroll");
+                    $(".datatable-document").css("width", $(".card-document").width());
+                }
+            });
+            $(document).ready(function () {
+                $("#inSectionSearch").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#filter_section *").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
             });
         </script>
 
@@ -65,111 +153,384 @@
         <?php include 'sidebar.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container">
-
-
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Documents</h1>
+                            <h1 class="h2">Document Approval</h1>
                         </div>
-                        <div class="row">
-                            <div class="col-sm">                        
-                                <div class="input-group rounded">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected disabled>Filter by</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                    <span class="input-group-text border-0" id="search-addon">
-                                        <i class="fa fa-search"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                            </div>
-                            <div class="col-sm">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+                            <h4 class="h4">Documents</h4>
+                            <div class="ms-auto">
+                                <a>Document Approval</a> / <a><b>Documents</b></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <br/>
                 <div class="card">
-                    <div class="card-body">
-                        <table id="table_document" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No.</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Department</th>
-                                    <th scope="col">Control Number</th>
-                                    <th scope="col">Download</th>
-                                    <th scope="col">Uploaded by</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Review - Audit of Finance and Account - September 2022</td>
-                                    <td class="text-center">Audit Forms</td>
-                                    <td class="text-center">FA</td>
-                                    <td>CTRL-20221019-1002</td>
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-outline-secondary disabled">
-                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                        </button>
-                                    </td>
-                                    <td>Gilberta Bláithín</td>
-                                    <td class="text-center"><button type="button" class="btn btn-secondary">Pending</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Approval - Change to employee travel policy - October 2022</td>
-                                    <td class="text-center">Policies</td>
-                                    <td class="text-center">HR</td>
-                                    <td>CTRL-20221001-1001</td>
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-outline-secondary disabled">
-                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                        </button>
-                                    </td>
-                                    <td>Anžej Ramesh</td>
-                                    <td class="text-center">
-                                        <a href="documentReviewProgress.php">
-                                            <button type="button" class="btn btn-warning">In process</button>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Approval - Request upgrade facilities - October 2022</td>
-                                    <td class="text-center">Procedures</td>
-                                    <td class="text-center">IT</td>
-                                    <td>CTRL-20220930-1000</td>
-                                    <td class="text-center">
+                    <div class="card-body card-document">
+                        <div id="main-content" class="file_manager">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
                                         <button type="button" class="btn btn-outline-secondary">
-                                            <i class="fa fa-download" aria-hidden="true"></i>
-                                        </button></td>
-                                    <td>Antigonus Ariston</td>
-                                    <td class="text-center"><button type="button" class="btn btn-success">Completed</button></td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th scope="col">No.</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Department</th>
-                                    <th scope="col">Control Number</th>
-                                    <th scope="col">Download</th>
-                                    <th scope="col">Uploaded by</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                                            <i class="fa fa-trash" aria-hidden="true"></i> Recycle Bin
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12 ms-sm-auto">
+                                        <input class="form-control" id="inSectionSearch" type="text" placeholder="Search..">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row clearfix" id="filter_section">
+                                    <h5>My Document(s)</h5>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 42KB <span class="date text-muted">Nov 02, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row clearfix" id="filter_section">
+                                    <h5>Document(s) Uploaded to System</h5>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 42KB <span class="date text-muted">Nov 02, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>                
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 89KB <span class="date text-muted">Dec 15, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>                
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 89KB <span class="date text-muted">Dec 15, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-bar-chart text-warning"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Report2016.xls</p>
+                                                        <small>Size: 68KB <span class="date text-muted">Dec 12, 2016</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-bar-chart text-warning"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Report2016.xls</p>
+                                                        <small>Size: 68KB <span class="date text-muted">Dec 12, 2016</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-success"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">asdf  hhkj.pdf</p>
+                                                        <small>Size: 3MB <span class="date text-muted">Aug 18, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-success"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">asdf  hhkj.pdf</p>
+                                                        <small>Size: 3MB <span class="date text-muted">Aug 18, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-success"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">asdf  hhkj.pdf</p>
+                                                        <small>Size: 3MB <span class="date text-muted">Aug 18, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-success"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">asdf  hhkj.pdf</p>
+                                                        <small>Size: 3MB <span class="date text-muted">Aug 18, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-bar-chart text-warning"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Report2016.xls</p>
+                                                        <small>Size: 68KB <span class="date text-muted">Dec 12, 2016</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-bar-chart text-warning"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Report2017.xls</p>
+                                                        <small>Size: 103KB <span class="date text-muted">Jan 24, 2016</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-bar-chart text-warning"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Report2016.xls</p>
+                                                        <small>Size: 68KB <span class="date text-muted">Dec 12, 2016</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 42KB <span class="date text-muted">Nov 02, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 89KB <span class="date text-muted">Dec 15, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-bar-chart text-warning"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Report2017.xls</p>
+                                                        <small>Size: 103KB <span class="date text-muted">Jan 24, 2016</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-12">
+                                        <div class="card">
+                                            <div class="file">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hover">
+                                                        <button type="button" class="btn btn-icon btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="fa fa-file text-info"></i>
+                                                    </div>
+                                                    <div class="file-name">
+                                                        <p class="m-b-5 text-muted">Document_2017.doc</p>
+                                                        <small>Size: 89KB <span class="date text-muted">Dec 15, 2017</span></small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
