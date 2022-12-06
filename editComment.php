@@ -64,7 +64,7 @@
 
 
                             </div><br/>  
-                            <center><button  class=" btn btn-primary btn-lg" type="submit">Comment</button> </center>
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Edit Comment</button> </center>
                         </form> 
                     </div>
                 </div>

@@ -126,7 +126,7 @@
                                 </div>
 
                             </div><br/>  
-                            <center><button  class=" btn btn-primary btn-lg" type="submit">Add Project</button> </center>
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Edit Project</button> </center>
                         </form>
                         
                     </div>

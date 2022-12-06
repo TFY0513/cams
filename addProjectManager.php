@@ -42,7 +42,7 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Project Management</h1>
             </div>
-            <h4 class="h4">Edit Project Task</h4>
+            <h4 class="h4">Add Project Manager</h4>
             <div class="col d-flex justify-content-center">
 
                 <div class="card" style="width:100%; height: 700px;">
@@ -52,7 +52,7 @@
 
 
                                 <div style="padding-left:20px; padding-right:20px;" class="col-12">
-                                    <h4 class="mb-3">Project Task Name</h4>
+                                    <h4 class="mb-3">Name</h4>
                                     <div class="input-group has-validation">
 
                                         <input type="text" class="form-control" id="username" placeholder="" required>
@@ -62,46 +62,25 @@
                                     </div>
                                 </div>
                                 <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Starting Date</h4>
-                                    <input type="date" class="form-control" id="username" placeholder="" required>
+                                    <h4 class="mb-3">Contact Number</h4>
+                                    <input type="text" class="form-control" id="username" placeholder="" required>
                                     <div class="invalid-feedback">
                                         Project name is required.
                                     </div>
                                 </div>
                                 <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Ending Date</h4>
-                                    <input type="date" class="form-control" id="username" placeholder="" required>
+                                    <h4 class="mb-3">Email</h4>
+                                    <input type="text" class="form-control" id="username" placeholder="" required>
                                     <div class="invalid-feedback">
                                         Project name is required.
                                     </div>
                                 </div>
 
 
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Budget</h4>
-                                    <input type="text" class="form-control" id="" placeholder="" value="" required>
-                                    <div class="invalid-feedback">
-                                        Valid age is required.
-                                    </div>
-                                   
-                                </div>
 
-
-                               <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Project Member</h4>
-                                     <select class="form-select">
-                                        <option value"">Member A</option>
-                                    </select>
-                                </div>
-                                <div  style="padding-left:20px; padding-right:20px;"  class="col-12">
-                                    <h4 class="mb-3">Project Manager</h4>
-                                    <select class="form-select">
-                                        <option value"">Manager A</option>
-                                    </select>
-                                </div>
 
                             </div><br/>  
-                            <center><button  class=" btn btn-primary btn-lg" type="submit">Edit Project Task</button> </center>
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Add Project Manager</button> </center>
                         </form>
 
                     </div>

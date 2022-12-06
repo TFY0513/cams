@@ -117,7 +117,7 @@
                                 </div>
 
                             </div><br/>  
-                            <center><button  class=" btn btn-primary btn-lg" type="submit">Add Project</button> </center>
+                            <center><button  class=" btn btn-primary btn-lg" type="submit">Add Calendar</button> </center>
                         </form>
 
                     </div>

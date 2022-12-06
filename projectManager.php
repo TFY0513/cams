@@ -47,7 +47,7 @@
                 
                 <div class="card" style="width:100%; height: 700px;">
                     <div class="card-body" >
-                        <a href="" class="btn btn-outline-secondary">Add New Project Manager</a><br/><br/>
+                        <a href="addProjectManager.php" class="btn btn-outline-secondary">Add New Project Manager</a><br/><br/>
                         <table class="table">
                            <thead>
                                 <tr>
@@ -67,8 +67,8 @@
                                      <td scope="col">Contact Number</td>
                                     <td scope="col">Email</td>
                                  
-                                      <td scope="col"><a href="">Edit</a></td>
-                                    <td scope="col"><a href="">Delete</a></td>
+                                      <td scope="col"><a href="editProjectManager.php">Edit</a></td>
+                                    <td scope="col"><a href="deleteProjectManager">Delete</a></td>
                                 </tr>
 
                             </tbody>
